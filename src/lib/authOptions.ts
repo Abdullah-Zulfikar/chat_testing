@@ -25,7 +25,7 @@ export const authOptions: NextAuthOptions = {
       const last_name = user.email?.split("@")[1]
     
       // Send user info to your Django backend
-      await fetch(`${process.env.DJANGO_BACKEND_URL || "http://localhost:8000"}/api/${process.env.DJNAGO_API_VERSION}/auth/oauth/google'`, {
+      await fetch(`${process.env.DJANGO_BACKEND_URL || "http://localhost:8000"}/api/${process.env.DJNAGO_API_VERSION}/auth/oauth/google`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
